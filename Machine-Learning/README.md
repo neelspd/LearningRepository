@@ -1,5 +1,5 @@
 # Machine-Learning
-Smaal Hobby Projects on Machine Learning and Data Analytics.
+Small Hobby Projects on Machine Learning and Data Analytics.
 
 Using Python Language and Tensorflow and Scikit- Learn Libraries.
 
