@@ -2,7 +2,7 @@
 This Repository Contains the code and exercises completed during learning Days
 
 ### Iris Classifier
-A machine learning.
+A machine learning exercise.
 The task was to construct a neural network classifier and train it on the Iris data set to predict flower species based on sepal/petal geometry.
 
 The steps involved are,
