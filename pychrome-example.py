@@ -12,7 +12,7 @@ user interface by supplying --headless.
 
 import pprint
 import pychrome
-
+import json
 
 class Crawler:
     def __init__(self, debugger_url='http://127.0.0.1:9222'):
@@ -59,8 +59,10 @@ class Crawler:
         # whether the site owner's wanted to enable anonymize IP. The expression will
         # fail with a JavaScript exception if Google Analytics is not in use.
         result = self.tab.Runtime.evaluate(expression="ga.getAll()[0].get('anonymizeIp')")
-        pprint.pprint(result)
-        
+        Debug = open("debug.txt", "a")
+        #pprint.pprint(result)
+        Debug.write(json.dumps(result) + "\n")
+        Debug.close()
         # Stop the tab
         self.tab.stop()
 
@@ -97,13 +99,9 @@ class Crawler:
 
 def main():
     Websites = open("randomsites.txt","r")
-    Debug = open("debug.txt", "a")
     for link in Websites:
-        link = Websites.readline()
         c = Crawler()
         c.crawl_page(link)
-        Debug.write(link)
-    Debug.close()
     Websites.close()
     
 
