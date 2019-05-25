@@ -18,6 +18,8 @@ cursor = connection.cursor()
 
 cursor.execute("select message_body from email.emails")
 rows = cursor.fetchall()
+cursor.close()
+connection.close()
 for row in rows:
    print(row[0] + "\n")
    WordList = str(row[0]).split()
@@ -30,6 +32,3 @@ for row in rows:
    print("\n\n")
 
 print("Operation done successfully")
-
-cursor.close()
-connection.close()
