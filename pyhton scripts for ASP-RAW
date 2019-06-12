@@ -69,3 +69,25 @@ with open('file') as f:
 
 # Display 3 most common lines
 cnts.most_common(3)
+
+
+    import re
+    import datetime
+    filepath = 'new 1.txt'
+    datepattern = '%d-%m-%Y'
+    with open(filepath, 'r') as f:
+    	file = f.read()
+    x = re.findall('\d\d-\d\d-\d\d\d\d', file)
+    y = []
+    for item in x:
+    	try:
+    		date = datetime.datetime.strptime(item, datepattern)
+    		y.append(date)
+    	except:
+    		pass
+    res = []
+    for item in y:
+    	a, b = str(item).split(' ')
+    	res.append(a)
+    	
+    for item in res: print(item)
