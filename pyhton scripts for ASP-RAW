@@ -63,3 +63,9 @@ Counter = Counter(split_it)
 most_occur = Counter.most_common(4) 
   
 print(most_occur) 
+
+with open('file') as f:
+    cnts = Counter(l.strip() for l in f)
+
+# Display 3 most common lines
+cnts.most_common(3)
