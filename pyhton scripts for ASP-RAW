@@ -4,3 +4,15 @@ def file_lengthy(fname):
                         pass
         return i + 1
 print("Number of lines in the file: ",file_lengthy("test.txt"))
+
+def main():
+    Websites = open("randomsites.txt","r")
+    for link in Websites:
+        c = Crawler()
+        c.crawl_page(link)
+    Websites.close()
+    
+
+
+if __name__ == '__main__':
+main()
